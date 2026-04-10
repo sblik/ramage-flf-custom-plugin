@@ -5,5 +5,6 @@
 
 namespace SMPLFY\ramageflf;
 class FormIds {
-	const EXAMPLE_FORM_ID = 9999;
+	const CONTACT_FORM_LONG = 5;
+	const CONTACT_FORM      = 2;
 }

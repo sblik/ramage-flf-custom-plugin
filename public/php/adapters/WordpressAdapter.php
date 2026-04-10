@@ -3,10 +3,10 @@
 namespace SMPLFY\ramageflf;
 
 class WordpressAdapter {
-	private WPHeartbeatExample $wpHeartbeatExample;
+	private RamageFlfEndpoints $ramageFlfEndpoints;
 
-	public function __construct( WPHeartbeatExample $wpHeartbeatExample ) {
-		$this->wpHeartbeatExample = $wpHeartbeatExample;
+	public function __construct( RamageFlfEndpoints $ramageFlfEndpoints ) {
+		$this->ramageFlfEndpoints = $ramageFlfEndpoints;
 
 		$this->register_hooks();
 		$this->register_filters();
@@ -17,8 +17,8 @@ class WordpressAdapter {
 	 *
 	 * @return void
 	 */
-	public function register_hooks() {
-
+	public function register_hooks(): void {
+		add_action( 'rest_api_init', [ $this->ramageFlfEndpoints, 'ramage_custom_endpoints' ] );
 	}
 
 	/**
@@ -27,6 +27,6 @@ class WordpressAdapter {
 	 * @return void
 	 */
 	public function register_filters() {
-		add_filter( 'heartbeat_received', [ $this->wpHeartbeatExample, 'receive_heartbeat' ], 10, 2 );
+
 	}
 }

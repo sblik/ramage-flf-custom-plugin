@@ -25,6 +25,7 @@ function require_ramageflf_dependencies() {
 	require_directory( 'public/php/entities' );
 	require_directory( 'public/php/repositories' );
 	require_directory( 'public/php/usecases' );
+	require_directory( 'public/php/routes' );
 	require_directory( 'public/php/adapters' );
 
 }

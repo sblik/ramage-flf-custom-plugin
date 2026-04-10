@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: SMPLFY Boiler Plate
+ * Plugin Name: SMPLFY Ramage Family Law Firm
  * Version: 1.0.0
- * Description: Starter plugin with custom plugin framework to get started
+ * Description: Custom plugin to handle technical logic and communication with Ramagelawportal.com
  * Author: Thomas Picolo-Donnelly
  * Author URI: https://simplifybiz.com/
  * Requires PHP: 7.4

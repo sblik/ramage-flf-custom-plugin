@@ -18,13 +18,13 @@ class DependencyFactory {
 		$gravityFormsWrapper = new SMPLFY_GravityFormsApiWrapper();
 
 		// Repositories
-		$exampleRepository = new ExampleRepository( $gravityFormsWrapper );
+		$contactFormLongRepository = new ContactFormLongRepository( $gravityFormsWrapper );
 		//Usecases
-		$exampleUsecase     = new ExampleUsecase( $exampleRepository );
-		$wpHeartbeatExample = new WPHeartbeatExample( $exampleRepository );
+		$googleAnalytics    = new GoogleAnalytics( $contactFormLongRepository );
+		$ramageFlfEndpoints = new RamageFlfEndpoints( $googleAnalytics );
 
 
-		new GravityFormsAdapter( $exampleUsecase );
-		new WordpressAdapter( $wpHeartbeatExample );
+		new GravityFormsAdapter();
+		new WordpressAdapter( $ramageFlfEndpoints );
 	}
 }

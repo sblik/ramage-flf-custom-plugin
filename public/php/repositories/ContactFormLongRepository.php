@@ -11,18 +11,19 @@ namespace SMPLFY\ramageflf;
 use SmplfyCore\SMPLFY_BaseRepository;
 use SmplfyCore\SMPLFY_GravityFormsApiWrapper;
 use WP_Error;
+
 /**
  *
- * @method static ExampleEntity|null get_one( $fieldId, $value )
- * @method static ExampleEntity|null get_one_for_current_user()
- * @method static ExampleEntity|null get_one_for_user( $userId )
- * @method static ExampleEntity[] get_all( $fieldId = null, $value = null, string $direction = 'ASC' )
- * @method static int|WP_Error add( ExampleEntity $entity )
+ * @method static ContactFormLongEntity|null get_one( $filters )
+ * @method static ContactFormLongEntity|null get_one_for_current_user()
+ * @method static ContactFormLongEntity|null get_one_for_user( $userId )
+ * @method static ContactFormLongEntity[] get_all( $fieldId = null, $value = null, string $direction = 'ASC' )
+ * @method static int|WP_Error add( ContactFormLongEntity $entity )
  */
-class ExampleRepository extends SMPLFY_BaseRepository {
+class ContactFormLongRepository extends SMPLFY_BaseRepository {
 	public function __construct( SMPLFY_GravityFormsApiWrapper $gravityFormsApi ) {
-		$this->entityType = ExampleEntity::class;
-		$this->formId     = FormIds::EXAMPLE_FORM_ID;
+		$this->entityType = ContactFormLongEntity::class;
+		$this->formId     = FormIds::CONTACT_FORM_LONG;
 
 		parent::__construct( $gravityFormsApi );
 	}

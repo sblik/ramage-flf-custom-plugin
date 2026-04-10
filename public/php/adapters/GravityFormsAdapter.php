@@ -6,10 +6,8 @@
 namespace SMPLFY\ramageflf;
 class GravityFormsAdapter {
 
-	private ExampleUsecase $exampleUsecase;
+	public function __construct() {
 
-	public function __construct( ExampleUsecase $exampleUsecase ) {
-		$this->exampleUsecase = $exampleUsecase;
 
 		$this->register_hooks();
 		$this->register_filters();
@@ -21,7 +19,7 @@ class GravityFormsAdapter {
 	 * @return void
 	 */
 	public function register_hooks() {
-		add_action( 'gform_after_submission_9999', [ $this->exampleUsecase, 'example_function' ], 10, 4 );
+
 	}
 
 	/**
