@@ -3,10 +3,10 @@
  *  Loads specified files and all files in specified directories initialises dependencies
  */
 
-namespace SMPLFY\boilerplate;
+namespace SMPLFY\ramageflf;
 
-function bootstrap_boilerplate_plugin() {
-	require_boilerplate_dependencies();
+function bootstrap_ramageflf_plugin() {
+	require_ramageflf_dependencies();
 
 	DependencyFactory::create_plugin_dependencies();
 }
@@ -16,7 +16,7 @@ function bootstrap_boilerplate_plugin() {
  *
  * @return void
  */
-function require_boilerplate_dependencies() {
+function require_ramageflf_dependencies() {
 
 	require_file( 'includes/enqueue_scripts.php' );
 	require_file( 'admin/DependencyFactory.php' );

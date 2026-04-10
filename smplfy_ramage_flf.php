@@ -13,7 +13,7 @@
  * @since 0.0.1
  */
 
-namespace SMPLFY\boilerplate;
+namespace SMPLFY\ramageflf;
 
 prevent_external_script_execution();
 
@@ -25,7 +25,7 @@ define( 'SMPLFY_NAME_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 require_once SMPLFY_NAME_PLUGIN_DIR . 'admin/utilities/smplfy_require_utilities.php';
 require_once SMPLFY_NAME_PLUGIN_DIR . 'includes/smplfy_bootstrap.php';
 
-bootstrap_boilerplate_plugin();
+bootstrap_ramageflf_plugin();
 
 function prevent_external_script_execution(): void {
 	if ( ! function_exists( 'get_option' ) ) {

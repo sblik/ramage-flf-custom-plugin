@@ -6,7 +6,7 @@
  *  from this custom plugin.
  */
 
-namespace SMPLFY\boilerplate;
+namespace SMPLFY\ramageflf;
 
 use SmplfyCore\SMPLFY_BaseRepository;
 use SmplfyCore\SMPLFY_GravityFormsApiWrapper;

@@ -5,8 +5,8 @@
  *
  *  */
 
-namespace SMPLFY\boilerplate;
-function enqueue_boilerplate_frontend_scripts() {
+namespace SMPLFY\ramageflf;
+function enqueue_ramageflf_frontend_scripts() {
 	global $current_user;
 	global $post;
 	$current_user = wp_get_current_user();
@@ -39,4 +39,4 @@ function enqueue_boilerplate_frontend_scripts() {
 
 }
 
-add_action( 'wp_enqueue_scripts', 'SMPLFY\boilerplate\enqueue_boilerplate_frontend_scripts' );
+add_action( 'wp_enqueue_scripts', 'SMPLFY\ramageflf\enqueue_ramageflf_frontend_scripts' );

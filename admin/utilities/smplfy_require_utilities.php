@@ -7,7 +7,7 @@
  * @return void
  */
 
-namespace SMPLFY\boilerplate;
+namespace SMPLFY\ramageflf;
 function require_directory( $dir ) {
 	if ( ! realpath( $dir ) ) {
 		$dir = SMPLFY_NAME_PLUGIN_DIR . $dir; // Append plugin dir if it is a relative path

@@ -6,7 +6,7 @@
  *  One or more of the functions are usually tied to a hook e.g. a Gravity Forms "after_submission" hook. See the Gravity Forms Adapter for how they are linked.
  */
 
-namespace SMPLFY\boilerplate;
+namespace SMPLFY\ramageflf;
 
 use SmplfyCore\SMPLFY_Log;
 use SmplfyCore\WorkflowStep;

@@ -3,7 +3,7 @@
  * A factory class responsible for creating and initializing all dependencies used in the plugin
  */
 
-namespace SMPLFY\boilerplate;
+namespace SMPLFY\ramageflf;
 
 use SmplfyCore\SMPLFY_GravityFormsApiWrapper;
 

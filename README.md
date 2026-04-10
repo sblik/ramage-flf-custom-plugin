@@ -1,1 +1,0 @@
-# smplfy-boilerplate-plugin

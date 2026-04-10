@@ -8,7 +8,7 @@
  * @property $email
  */
 
-namespace SMPLFY\boilerplate;
+namespace SMPLFY\ramageflf;
 
 use SmplfyCore\SMPLFY_BaseEntity;
 

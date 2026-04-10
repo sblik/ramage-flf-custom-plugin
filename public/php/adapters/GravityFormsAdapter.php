@@ -3,7 +3,7 @@
  * Adapter for handling Gravity Forms events
  */
 
-namespace SMPLFY\boilerplate;
+namespace SMPLFY\ramageflf;
 class GravityFormsAdapter {
 
 	private ExampleUsecase $exampleUsecase;

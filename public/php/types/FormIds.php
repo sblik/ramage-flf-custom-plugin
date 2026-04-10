@@ -3,7 +3,7 @@
  * A types file can be used to organise unique identifiers that are commonly used throughout your plugin
  */
 
-namespace SMPLFY\boilerplate;
+namespace SMPLFY\ramageflf;
 class FormIds {
 	const EXAMPLE_FORM_ID = 9999;
 }
