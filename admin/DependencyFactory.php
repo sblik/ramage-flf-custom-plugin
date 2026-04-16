@@ -24,7 +24,7 @@ class DependencyFactory {
 		$ramageFlfEndpoints = new RamageFlfEndpoints( $googleAnalytics );
 
 
-		new GravityFormsAdapter();
+		new GravityFormsAdapter( $googleAnalytics );
 		new WordpressAdapter( $ramageFlfEndpoints );
 	}
 }

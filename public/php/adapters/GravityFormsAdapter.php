@@ -5,9 +5,10 @@
 
 namespace SMPLFY\ramageflf;
 class GravityFormsAdapter {
+	private GoogleAnalytics $googleAnalytics;
 
-	public function __construct() {
-
+	public function __construct( GoogleAnalytics $googleAnalytics ) {
+		$this->googleAnalytics = $googleAnalytics;
 
 		$this->register_hooks();
 		$this->register_filters();
@@ -28,6 +29,6 @@ class GravityFormsAdapter {
 	 * @return void
 	 */
 	public function register_filters() {
-
+		add_filter( 'gform_field_value_gclid', [ $this->googleAnalytics, 'populate_field_with_gclid' ] );
 	}
 }

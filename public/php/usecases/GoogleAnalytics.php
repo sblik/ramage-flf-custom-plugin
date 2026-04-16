@@ -10,6 +10,7 @@ namespace SMPLFY\ramageflf;
 
 use SmplfyCore\SMPLFY_Log;
 use SmplfyCore\WorkflowStep;
+use WP_REST_Request;
 use WP_REST_Response;
 
 class GoogleAnalytics {
@@ -24,20 +25,16 @@ class GoogleAnalytics {
 	 *
 	 * @return WP_REST_Response
 	 */
-	function get_gclid_for_pnc( $request ): WP_REST_Response {
+	function get_gclid_for_pnc( WP_REST_Request $request ): WP_REST_Response {
 		SMPLFY_Log::info( "get_gclid_for_pnc triggered ------- ", $request );
 
-		$requestJson = $request->get_json_params();
-
-		if ( isset( $requestJson['data']['pnc_email'] ) ) {
-			$pncEmail = $requestJson['data']['pnc_email'];
-			SMPLFY_Log::info( "Request json: ", $requestJson );
-			SMPLFY_Log::info( "PNC EMAIL: ", $pncEmail );
-
+		$requestJson = json_decode( $request->get_body() );
+		SMPLFY_Log::info( "Request JSON: ", $requestJson );
+		if ( isset( $requestJson->pnc_email ) ) {
+			$pncEmail = $requestJson->pnc_email;
 
 			$filters           = array( ContactFormLongEntity::get_field_id( 'email' ) => $pncEmail );
 			$contactFormEntity = $this->contactFormLongRepository->get_one( $filters );//If the form submitted isn't the form for the entity
-			SMPLFY_Log::info( "Contact Form Entity: ", $contactFormEntity );
 
 			if ( ! empty( $contactFormEntity ) ) {
 				$gclid = $contactFormEntity->gclid;
@@ -61,6 +58,19 @@ class GoogleAnalytics {
 				401
 			);
 		}
+	}
+
+// Populate GF hidden field via dynamic population parameter "gclid"
+	function populate_field_with_gclid( $value ) {
+		if ( ! empty( $_GET['gclid'] ) ) {
+			return sanitize_text_field( $_GET['gclid'] );
+		}
+
+		if ( ! empty( $_COOKIE['gclid'] ) ) {
+			return sanitize_text_field( $_COOKIE['gclid'] );
+		}
+
+		return $value;
 	}
 
 }
